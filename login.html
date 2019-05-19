@@ -11,35 +11,37 @@
     <link rel="stylesheet" href="style.css">
     <title>Login/Register Form</title>
     <link href="bootstrap.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 </head>
 <body>
     <div id="logreg-forms">
-        <form class="form-signin">
+        <div class="form-signin" style="margin:10px;">
             <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
             <div class="social-login">
                 <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign in with Facebook</span> </button>
                 <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign in with Google+</span> </button>
             </div>
             <p style="text-align:center"> OR  </p>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+            <input type="text" id="inputUser" class="form-control" placeholder="Username " required="" autofocus="">
             <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
             
-            <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign in</button>
+            <button class="btn btn-success btn-block"  id="login"><i class="fas fa-sign-in-alt">
+                
+            </i> Sign in</button>
             <a href="#" id="forgot_pswd">Forgot password?</a>
             <hr>
-            <!-- <p>Don't have an account!</p>  -->
+            <p>Don't have an account!</p> 
             <button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> Sign up New Account</button>
-            </form>
+        </div>
 
-            <form action="/reset/password/" class="form-reset">
+            <!-- <form action="/reset/password/" class="form-reset">
                 <input type="email" id="resetEmail" class="form-control" placeholder="Email address" required="" autofocus="">
                 <button class="btn btn-primary btn-block" type="submit">Reset Password</button>
                 <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Back</a>
-            </form>
+            </form> -->
             
-            <form action="/signup/" class="form-signup">
+            <!-- <form action="/signup/" class="form-signup">
                 <div class="social-login">
                     <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign up with Facebook</span> </button>
                 </div>
@@ -56,13 +58,35 @@
 
                 <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i> Sign Up</button>
                 <a href="#" id="cancel_signup"><i class="fas fa-angle-left"></i> Back</a>
-            </form>
+            </form> -->
             <br>
             
     </div>
+
+    <script>
+        const button = document.getElementById('login');
+           
+        button.addEventListener('click',function onCLick(e){
+            const username = document.getElementById('inputUser').value;
+            const password = document.getElementById('inputPassword').value;
+            
+            console.log( username);
+            console.log( password);
+            console.log('button clicked');
+        })
+    </script>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    -->
+
+    
 </body>
 </html>
+<!-- retrive password
+retrive username
+send a request to express server (fetch / axios)
+validate user-email
+send to user dashboard -->
+
+
